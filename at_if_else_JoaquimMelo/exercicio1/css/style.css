@@ -1,0 +1,100 @@
+body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      overflow: hidden;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      transform: rotateX(-10deg);
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(10px);
+      box-shadow:
+        rgba(0, 0, 0, 0.6) 0px 2px 4px,
+        rgba(0, 0, 0, 0.5) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.3) 0px -3px 0px inset;
+      animation: form-animation 0.5s ease-in-out;
+      width: 300px;
+    }
+
+    @keyframes form-animation {
+      from {
+        transform: rotateX(-30deg);
+        opacity: 0;
+      }
+      to {
+        transform: rotateX(0deg);
+        opacity: 1;
+      }
+    }
+
+    label {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .input {
+      padding: 10px;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      box-shadow:
+        0px 2px 4px rgba(0, 0, 0, 0.5),
+        0px 7px 13px rgba(0, 0, 0, 0.3),
+        inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+      color: white;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .input:hover,
+    .input:focus {
+      border-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(0, 0, 0, 0.6);
+      transform: scale(1.05) rotateY(20deg);
+      outline: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transform: rotateX(-10deg);
+      transition: all 0.3s ease-in-out;
+      box-shadow:
+        rgba(0, 0, 0, 0.5) 0px 2px 4px,
+        rgba(0, 0, 0, 0.4) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.3) 0px -3px 0px inset;
+    }
+
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      font-size: 17px;
+      transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+    }

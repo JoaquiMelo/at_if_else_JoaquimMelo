@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Inicial - Exercícios</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+
+    .glass {
+      position: relative;
+      width: 200px;
+      height: 260px;
+      background: linear-gradient(#ffffff22, transparent);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transform: rotate(calc(var(--r, 0) * 1deg));
+      cursor: pointer;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    .container:hover .glass {
+      transform: rotate(0deg);
+      margin: 0 10px;
+    }
+
+    .glass img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+
+    .glass h3 {
+      margin: 15px 0 5px;
+      font-size: 18px;
+    }
+
+    .glass p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .glass::before {
+      content: attr(data-text);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="glass" data-text="Nota do Aluno" style="--r:-10;" onclick="window.location.href='exercicio1/index.html'">
+      <img src="img/uno.jpg" alt="Exercício 1">
+      <h3>Exercício 1</h3>
+      <p>Notas de Aluno</p>
+    </div>
+
+    <div class="glass" data-text="Temperatura" style="--r:5;" onclick="window.location.href='exercicio2/index.html'">
+      <img src="img/lebron.jpg" alt="Exercício 2">
+      <h3>Exercício 2</h3>
+      <p>Temperatura</p>
+    </div>
+
+    <div class="glass" data-text="Contato" style="--r:15;" onclick="window.location.href='exercicio3/index.html'">
+      <img src="img/yuri.jpg" alt="Exercício 3">
+      <h3>Exercício 3</h3>
+      <p>Formulário</p>
+    </div>
+  </div>
+
+</body>
+</html>
